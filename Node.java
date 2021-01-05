@@ -6,5 +6,14 @@ public class Node{
    next=null;
    prev=null;
  }
- //write get/set methods for all three instance variables.
+
+ public String getData(){
+   return data;
+ }
+
+ public String setData(String s){
+   String old=data;
+   data=s;
+   return old;
+ }
 }
