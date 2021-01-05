@@ -26,4 +26,14 @@ public class Node{
     prev=s;
     return old;
   }
+
+  public Node getNext(){
+    return next;
+  }
+
+  public Node setNext(Node s){
+    Node old=next;
+    next=s;
+    return old;
+  }
 }
