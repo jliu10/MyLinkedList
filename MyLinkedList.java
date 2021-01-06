@@ -47,7 +47,10 @@ public class MyLinkedList{
       newNode.setNext(start);
       start=newNode;
     }else{ //ADDING TO MIDDLE
-
+      newNode.setNext(getNode(index));
+      newNode.setPrev(getNode(index-1));
+      newNode.getNext().setPrev(newNode);
+      newNode.getPrev().setNext(newNode);
     }
     size++;
   }
