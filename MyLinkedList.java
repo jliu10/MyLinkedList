@@ -12,7 +12,7 @@ public class MyLinkedList{
   }
 
   private Node getNode(int index){
-    if(index<0||index>size()) throw new IndexOutOfBoundsException();
+    if(index<0||index>=size()) throw new IndexOutOfBoundsException();
     Node current=start;
     for(int i=0;i<index;i++){
       current=current.getNext();
@@ -56,10 +56,15 @@ public class MyLinkedList{
   }
 
   public String get(int index){
-    return "";
+    if(index<0||index>=size()) throw new IndexOutOfBoundsException();
+    return getNode(index).getData();
   }
+
   public String set(int index, String value){
-    return "";
+    if(index<0||index>=size()) throw new IndexOutOfBoundsException();
+    String old=get(index);
+    getNode(index).setData(value);
+    return old;
   }
   public String toString(){
     return "";
