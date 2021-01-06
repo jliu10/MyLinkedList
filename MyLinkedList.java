@@ -67,7 +67,15 @@ public class MyLinkedList{
     return old;
   }
   public String toString(){
-    return "";
+    if(size()==0) return "[]";
+    String s="[";
+    Node current=start;
+    while(current.getNext()!=null){
+      s+=current.getData()+", ";
+      current=current.getNext();
+    }
+    s+=current.getData()+"]";
+    return s;
   }
  //Any helper method that returns a Node object MUST BE PRIVATE!
 }
