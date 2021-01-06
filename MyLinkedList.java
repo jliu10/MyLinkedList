@@ -11,7 +11,7 @@ public class MyLinkedList{
     return size;
   }
 
-  private static Node getNode(int index){
+  private Node getNode(int index){
     if(index<0||index>size()) throw new IndexOutOfBoundsException();
     Node current=start;
     for(int i=0;i<index;i++){
