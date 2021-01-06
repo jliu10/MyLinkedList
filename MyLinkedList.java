@@ -11,6 +11,15 @@ public class MyLinkedList{
     return size;
   }
 
+  private static Node getNode(int index){
+    if(index<0||index>size()) throw new IndexOutOfBoundsException();
+    Node current=start;
+    for(int i=0;i<index;i++){
+      current=current.getNext();
+    }
+    return current;
+  }
+
   public boolean add(String value){
     Node newNode=new Node(value);
     if(size()==0) start=newNode; //ADDING TO EMPTY
@@ -23,7 +32,7 @@ public class MyLinkedList{
     return true;
   }
 
-  public boolean add(int index, String value){
+  public void add(int index, String value){
     Node newNode=new Node(value);
     if(index<0||index>size()) throw new IndexOutOfBoundsException();
     else if(index==size()){
@@ -38,10 +47,9 @@ public class MyLinkedList{
       newNode.setNext(start);
       start=newNode;
     }else{ //ADDING TO MIDDLE
-      
+
     }
     size++;
-    return true;
   }
 
   public String get(int index){
