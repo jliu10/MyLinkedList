@@ -66,6 +66,7 @@ public class MyLinkedList{
     getNode(index).setData(value);
     return old;
   }
+
   public String toString(){
     if(size()==0) return "[]";
     String s="[";
@@ -76,6 +77,37 @@ public class MyLinkedList{
     }
     s+=current.getData()+"]";
     return s;
+  }
+
+  public String remove(int index){
+    if(index<0||index>=size()) throw new IndexOutOfBoundsException();
+    String old=get(index);
+    if(size()==1){ //SINGLE ELEMENT
+      start=null;
+      end=null;
+    }else if(index==0){ //HEAD
+      start.getNext().setPrev(null);
+      start=start.getNext();
+    }else if(index==size()-1){ //TAIL
+      end.getPrev().setNext(null);
+      end=end.getPrev();
+    }else{ //MIDDLE
+
+    }
+    size--;
+    return old;
+  }
+
+  /*
+  *@postcondition: All of the elements from other are removed from the other, and connected to the end of this linked list.
+  *@postcondition: The size of other is reduced to 0.
+  *@postcondition: The size of this is now the combined sizes of both original lists
+  */
+  public void extend(MyLinkedList other){
+  }
+
+  public String toStringReversed(){
+    return "";
   }
  //Any helper method that returns a Node object MUST BE PRIVATE!
 }
