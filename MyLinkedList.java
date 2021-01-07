@@ -92,7 +92,8 @@ public class MyLinkedList{
       end.getPrev().setNext(null);
       end=end.getPrev();
     }else{ //MIDDLE
-
+      getNode(index).getPrev().setNext(getNode(index).getNext());
+      getNode(index).getNext().setPrev(getNode(index).getPrev());
     }
     size--;
     return old;
